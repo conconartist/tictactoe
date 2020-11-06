@@ -6,9 +6,10 @@
 currentGame;
 
 //functions
-function checkturn(){
+function checkTurn(){
 
 }
+
 function playToken() {
-  
+
 }

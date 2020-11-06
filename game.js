@@ -3,11 +3,16 @@ class Game {
     this.playerOne = new Player("Jim")
     this.playerTwo = new Player("Dwight")
     this.board = {
-      rowOne:["boxOne", "boxTwo", "boxThree"],//boxes are undefined or empty array to start?
-      rowTwo: ["boxFour", "boxFive", "boxSix"],//boxes are undefined
-      rowThree: ["boxSeven", "boxEight", "boxNine"] //boxes are undefined
+      boxOne: "",
+      boxTwo: "",
+      boxThree: "",
+      boxFour: "",
+      boxFive: "",
+      boxSix: "",
+      boxSeven: "",
+      boxEight: "",
+      boxNine: "",
     }
-
   }
   checkTurn(){
     //toggle
