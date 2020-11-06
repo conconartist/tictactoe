@@ -1,11 +1,12 @@
 class Game {
-  constructor(player1, player2, board) {
-    this.player1 = player1;
-    this.player2 = player2;
+  constructor(board) {
+    this.playerOne = new Player("Jim")
+    this.playerTwo = new Player("Dwight")
     this.board = board;
   }
   checkTurn(){
-
+    //toggle
+    //if player1 turn = true; player2 turn = false;
   }
   checkForWin(){
 
