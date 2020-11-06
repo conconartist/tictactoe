@@ -1,5 +1,5 @@
 class Game {
-  constructor(board) {
+  constructor() {
     this.playerOne = new Player("Jim")
     this.playerTwo = new Player("Dwight")
     this.board = {
@@ -15,6 +15,7 @@ class Game {
     }
   }
   checkTurn(){
+    this.playerOne.turn != this.playerTwo.turn;
     //toggle
     //if player1 turn = true; player2 turn = false;
   }
@@ -29,6 +30,16 @@ class Game {
     //add to correct player's wins array
   }
   resetGame(){
-    //reset board
+    this.board = {
+      boxOne: "",
+      boxTwo: "",
+      boxThree: "",
+      boxFour: "",
+      boxFive: "",
+      boxSix: "",
+      boxSeven: "",
+      boxEight: "",
+      boxNine: "",
+    }
   }
 }
