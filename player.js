@@ -6,7 +6,7 @@ class Player {
     this.turn = false;
   }
   saveWinsToStorage() {
-
+    
   }
   retrieveWinsFromStorage() {
 
