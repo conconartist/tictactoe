@@ -12,25 +12,28 @@ class Game {
       {boxSeven: ""},
       {boxEight: ""},
       {boxNine: ""},
-      ]
-    }
+    ]
   }
   checkTurn(){
     this.playerOne.turn != this.playerTwo.turn;
     //toggle
     //if player1 turn = true; player2 turn = false;
   }
-  checkForWin(){
+  checkForWin(player){
     //winning conditions:
-    //comboOne: 1 + 2 + 3,
-    //comboTwo: 1 + 5 + 9,
-    //comboThree: 1 + 4 + 7,
-    //comboFour: 2 + 5 + 8,
-    //comboFive: 3 + 6 + 9,
-    //comboSix: 3 + 5 + 7,
-    //comboSeven: 4 + 5 + 6,
-    //comboEight: 7 + 8 + 9
-
+    var winningCombos = [
+      [this.board.boxOne, this.board.boxTwo, this.board.boxThree],
+      [this.board.boxOne, this.board.boxFive, this.board.boxNine],
+      [this.board.boxOne, this.board.boxFour, this.board.boxSeven],
+      [this.board.boxTwo, this.board.boxFive, this.board.boxEight],
+      [this.board.boxThree, this.board.boxSix, this.board.boxNine],
+      [this.board.boxThree, this.board.boxFive, this.board.boxSeven],
+      [this.board.boxFour, this.board.boxFive, this.board.boxSix],
+      [this.board.boxSeven, this.board.boxEight, this.board.boxNine]
+    ]
+    for (var i = 0; i < winningCombos.length; i++) {
+      winningCombos[i]
+    }
     //if (check conditions) { player1.wins.push(this.board)}
     //else if(check conditions) {player2.wins.push(this.board)}
     //if win, reset board
@@ -42,16 +45,16 @@ class Game {
     //add to correct player's wins array
   }
   resetGame(){
-    this.board = {
-      boxOne: "",
-      boxTwo: "",
-      boxThree: "",
-      boxFour: "",
-      boxFive: "",
-      boxSix: "",
-      boxSeven: "",
-      boxEight: "",
-      boxNine: "",
-    }
+    this.board = [
+      {boxOne: ""},
+      {boxTwo: ""},
+      {boxThree: ""},
+      {boxFour: ""},
+      {boxFive: ""},
+      {boxSix: ""},
+      {boxSeven: ""},
+      {boxEight: ""},
+      {boxNine: ""},
+    ]
   }
 }

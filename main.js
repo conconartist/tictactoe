@@ -22,9 +22,10 @@ function checkTurn(){
 function displayGameText() {
   if (currentGame.playerOne.turn === true) {
   return `It's ${currentGame.playerOne.token}'s turn!`
-  //use innerText/innerHTML
-} else {
+  //add innerText/innerHTML
+  } else {
   return `It's ${currentGame.playerTwo.token}'s turn!`
+  //add innerText/innerHTML
   }
 }
 
