@@ -1,20 +1,22 @@
 //query selectors:
 
 //event listeners:
+//window.addEventListener("load", startGame)
+//boxes.addEventListener("click", playToken)
 
 //global variables:
-currentGame;
+var currentGame;
 
 //functions
 function startGame() {
   currentGame = new Game();
   currentGame.playerOne.turn = true;
   checkTurn()
-  displayGameText()
 }
 
 function checkTurn(){
   currentGame.checkTurn()
+  displayGameText()
 }
 
 function displayGameText() {
@@ -28,5 +30,24 @@ function displayGameText() {
 
 function playToken() {
   //connect with Event Listener on click
-  
+  if (currentGame.playerOne.turn === true) {
+    //enable Jim
+    for (var i = 0; i < currentGame.board.length; i++) {
+      currentGame.board[i].value = "Jim"
+      //innerHTML for game piece
+    }
+  } else {
+    //enable Dwight
+    for (var i = 0; i < currentGame.board.length; i++) {
+      currentGame.board[i].value = "Dwight"
+      //innerHTML for game piece
+  }
+  checkForWin()
+  checkForDraw()
+  checkTurn()
+}
+
+function updateWins() {
+  //update text under Player's wins count
+  //save number to storage, update player instance
 }
