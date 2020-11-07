@@ -6,7 +6,7 @@ class Player {
     this.turn = false;
   }
   saveWinsToStorage() {
-    
+    //save array of this.wins to local storage 
   }
   retrieveWinsFromStorage() {
 

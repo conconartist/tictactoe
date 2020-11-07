@@ -46,13 +46,14 @@ function playToken(event) {
   //connect with Event Listener on click
   //event.target compare to square on click
   //event.target must === ""
+  //currentGame.player.token = this.board.boxNumber
   if (currentGame.playerOne.turn === true) {
     //enable Jim
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Jim"
       //innerHTML for game piece
-      checkForWin(playerOne)
-      checkForDraw(playerOne)
+      currentGame.checkForWin(playerOne)
+      currentGame.checkForDraw(playerOne)
       currentGame.playerOne.turn = false;
       checkTurn();
     }
@@ -60,8 +61,8 @@ function playToken(event) {
     //enable Dwight
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Dwight"
-      checkForWin(playerTwo);
-      checkForDraw(playerTwo);
+      currentGame.checkForWin(playerTwo);
+      currentGame.checkForDraw(playerTwo);
       currentGame.playerTwo.turn = false;
       checkturn();
     }
