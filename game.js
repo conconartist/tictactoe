@@ -19,7 +19,7 @@ class Game {
     //toggle
     //if player1 turn = true; player2 turn = false;
   };
-  checkForWin(){//player in parameter?
+  checkForWin(player){//player in parameter?
     //winning conditions:
     var winningCombos = [
       [this.board.boxOne, this.board.boxTwo, this.board.boxThree],
@@ -32,7 +32,9 @@ class Game {
       [this.board.boxSeven, this.board.boxEight, this.board.boxNine]
     ]
     for (var i = 0; i < winningCombos.length; i++) {
-      //if(winningCombos[i] === 
+      if(winningCombos[i] === [this.player.token, this.player.token, this.player.token]) {
+        
+      }
     }
     //if (check conditions) { player1.wins.push(this.board)}
     //else if(check conditions) {player2.wins.push(this.board)}
