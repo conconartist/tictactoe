@@ -11,10 +11,11 @@ var boxSix = document.querySelector(".six");
 var boxSeven = document.querySelector(".seven");
 var boxEight = document.querySelector(".eight");
 var boxNine = document.querySelector(".nine");
+var gameBoard = document.querySelector(".game-board-area")
 
 //event listeners:
 window.addEventListener("load", startGame);
-boxes.addEventListener("click", playToken);
+gameBoard.addEventListener("click", playToken);
 
 //global variables:
 var currentGame;
@@ -43,18 +44,20 @@ function displayGameText() {
 
 function playToken(event) {
   //connect with Event Listener on click
+  //event.target compare to square on click
+  //event.target must === ""
   if (currentGame.playerOne.turn === true) {
     //enable Jim
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Jim"
       //innerHTML for game piece
-      currentGame.player.turn = false;
+      currentGame.playerOne.turn = false;
     }
   } else {
     //enable Dwight
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Dwight"
-      currentGame.player.turn = false;
+      currentGame.playerTwo.turn = false;
     }
       //innerHTML for game piece
   }
