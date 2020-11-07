@@ -50,8 +50,8 @@ function playToken(event) {
   if (currentGame.playerOne.turn === true) {
     //enable Jim
     for (var i = 0; i < currentGame.board.length; i++) {
-      //event.target.id
-      currentGame.board[i] = "Jim"
+      if(event.target.id === currentGame.board.key[i]) {
+      currentGame.board[i] = currentGame.playerOne.token;
       //innerHTML for game piece
       currentGame.checkForWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerOne)
@@ -69,6 +69,14 @@ function playToken(event) {
     }
       //innerHTML for game piece
   }
+}
+
+function playJimsTurn() {
+
+}
+
+function playDwightsTurn() {
+
 }
 
 function updateWins() {

@@ -3,15 +3,15 @@ class Game {
     this.playerOne = new Player("Jim", "./assets/IMG_8984.PNG");
     this.playerTwo = new Player("Dwight", "./assets/IMG_8985.PNG");
     this.board = [
-      {sqOne: ""},
-      {sqTwo: ""},
-      {sqThree: ""},
-      {sqFour: ""},
-      {sqFive: ""},
-      {sqSix: ""},
-      {sqSeven: ""},
-      {sqEight: ""},
-      {sqNine: ""},
+      {one: ""},
+      {two: ""},
+      {three: ""},
+      {four: ""},
+      {five: ""},
+      {six: ""},
+      {seven: ""},
+      {eight: ""},
+      {nine: ""},
     ];
   };
   checkTurn(){
