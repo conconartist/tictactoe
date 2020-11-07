@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.playerOne = new Player("Jim")
-    this.playerTwo = new Player("Dwight")
+    this.playerOne = new Player("Jim");
+    this.playerTwo = new Player("Dwight");
     this.board = [
       {boxOne: ""},
       {boxTwo: ""},
@@ -12,14 +12,14 @@ class Game {
       {boxSeven: ""},
       {boxEight: ""},
       {boxNine: ""},
-    ]
-  }
+    ];
+  };
   checkTurn(){
     this.playerOne.turn != this.playerTwo.turn;
     //toggle
     //if player1 turn = true; player2 turn = false;
-  }
-  checkForWin(player){
+  };
+  checkForWin(){//player in parameter?
     //winning conditions:
     var winningCombos = [
       [this.board.boxOne, this.board.boxTwo, this.board.boxThree],
@@ -32,7 +32,7 @@ class Game {
       [this.board.boxSeven, this.board.boxEight, this.board.boxNine]
     ]
     for (var i = 0; i < winningCombos.length; i++) {
-      winningCombos[i]
+      //if(winningCombos[i] === 
     }
     //if (check conditions) { player1.wins.push(this.board)}
     //else if(check conditions) {player2.wins.push(this.board)}
@@ -40,6 +40,7 @@ class Game {
   }
   checkForDraw(){
     //if (check conditions) {claim draw, reset board}
+   //if this.board is full with no winning combos, claim draw
   }
   saveWinsToStorage(){
     //add to correct player's wins array

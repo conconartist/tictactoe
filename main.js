@@ -36,11 +36,14 @@ function playToken() {
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Jim"
       //innerHTML for game piece
+      currentGame.player.turn = false;
     }
   } else {
     //enable Dwight
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Dwight"
+      currentGame.player.turn = false;
+    }
       //innerHTML for game piece
   }
   checkForWin()
