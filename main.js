@@ -1,4 +1,6 @@
 //query selectors:
+var gameText = document.querySelector(".game-text");
+
 
 //event listeners:
 //window.addEventListener("load", startGame)
@@ -21,10 +23,10 @@ function checkTurn(){
 
 function displayGameText() {
   if (currentGame.playerOne.turn === true) {
-  return `It's ${currentGame.playerOne.token}'s turn!`
+  gameText.innerHTML = `It's ${currentGame.playerOne.token}'s turn!`
   //add innerText/innerHTML
   } else {
-  return `It's ${currentGame.playerTwo.token}'s turn!`
+  gameText.innerHTML = `It's ${currentGame.playerTwo.token}'s turn!`
   //add innerText/innerHTML
   }
 }
