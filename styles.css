@@ -18,7 +18,7 @@ h3{
 }
 
 p {
-  background-color: pink;
+  /* background-color: pink; */
   border: solid;
   width: 100%;
   height: 100%;
@@ -33,6 +33,11 @@ p {
   height: 20%;
 }
 
+.dwight-token {
+  width: 3em;
+  height: 2em;
+}
+
 .game-board-column {
   display: flex;
   flex-direction: column;
@@ -42,6 +47,8 @@ p {
 }
 
 .game-board-area {
+  /* background-image: url(https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80); */
+  /* background-image: url(https://images.unsplash.com/photo-1586074299757-dc655f18518c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); */
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -51,6 +58,11 @@ p {
 .jim {
   width: 62%;
   height: 22%;
+}
+
+.jim-token {
+  width: 3em;
+  height: 2.1em;
 }
 
 .logo {
