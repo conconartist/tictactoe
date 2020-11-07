@@ -1,10 +1,20 @@
 //query selectors:
 var gameText = document.querySelector(".game-text");
-
+var playerOneText = document.querySelector(".player-one");
+var playerTwoText = document.querySelector(".player-two");
+var boxOne = document.querySelector(".one");
+var boxTwo = document.querySelector(".two");
+var boxThree = document.querySelector(".three");
+var boxFour = document.querySelector(".four");
+var boxFive = document.querySelector(".five");
+var boxSix = document.querySelector(".six");
+var boxSeven = document.querySelector(".seven");
+var boxEight = document.querySelector(".eight");
+var boxNine = document.querySelector(".nine");
 
 //event listeners:
-//window.addEventListener("load", startGame)
-//boxes.addEventListener("click", playToken)
+window.addEventListener("load", startGame);
+boxes.addEventListener("click", playToken);
 
 //global variables:
 var currentGame;
@@ -31,7 +41,7 @@ function displayGameText() {
   }
 }
 
-function playToken() {
+function playToken(event) {
   //connect with Event Listener on click
   if (currentGame.playerOne.turn === true) {
     //enable Jim
