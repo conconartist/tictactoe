@@ -51,19 +51,22 @@ function playToken(event) {
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Jim"
       //innerHTML for game piece
+      checkForWin(playerOne)
+      checkForDraw(playerOne)
       currentGame.playerOne.turn = false;
+      checkTurn();
     }
   } else {
     //enable Dwight
     for (var i = 0; i < currentGame.board.length; i++) {
       currentGame.board[i].value = "Dwight"
+      checkForWin(playerTwo);
+      checkForDraw(playerTwo);
       currentGame.playerTwo.turn = false;
+      checkturn();
     }
       //innerHTML for game piece
   }
-  checkForWin()
-  checkForDraw()
-  checkTurn()
 }
 
 function updateWins() {
