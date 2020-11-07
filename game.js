@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.playerOne = new Player("Jim");
-    this.playerTwo = new Player("Dwight");
+    this.playerOne = new Player("Jim", "./assets/IMG_8984.PNG");
+    this.playerTwo = new Player("Dwight", "./assets/IMG_8985.PNG");
     this.board = [
       {sqOne: ""},
       {sqTwo: ""},
@@ -17,8 +17,7 @@ class Game {
   checkTurn(){
     this.playerOne.turn != this.playerTwo.turn;
   };
-  checkForWin(player){//player in parameter?
-    //winning conditions:
+  checkForWin(player){
     var winningCombos = [
       [this.board.sqOne, this.board.sqTwo, this.board.sqThree],
       [this.board.sqOne, this.board.sqFive, this.board.sqNine],
@@ -30,7 +29,7 @@ class Game {
       [this.board.sqSeven, this.board.sqEight, this.board.sqNine]
     ]
     for (var i = 0; i < winningCombos.length; i++) {
-      if(winningCombos[i] === [this.player.token, this.player.token, this.player.token]) {
+      if(winningCombos[i] === [player.token, player.token, player.token]) {
         player.wins.push(this.board);
         // this.resetGame(); on timer?
       }
