@@ -3,44 +3,42 @@ class Game {
     this.playerOne = new Player("Jim");
     this.playerTwo = new Player("Dwight");
     this.board = [
-      {boxOne: ""},
-      {boxTwo: ""},
-      {boxThree: ""},
-      {boxFour: ""},
-      {boxFive: ""},
-      {boxSix: ""},
-      {boxSeven: ""},
-      {boxEight: ""},
-      {boxNine: ""},
+      {sqOne: ""},
+      {sqTwo: ""},
+      {sqThree: ""},
+      {sqFour: ""},
+      {sqFive: ""},
+      {sqSix: ""},
+      {sqSeven: ""},
+      {sqEight: ""},
+      {sqNine: ""},
     ];
   };
   checkTurn(){
     this.playerOne.turn != this.playerTwo.turn;
-    //toggle
-    //if player1 turn = true; player2 turn = false;
   };
   checkForWin(player){//player in parameter?
     //winning conditions:
     var winningCombos = [
-      [this.board.boxOne, this.board.boxTwo, this.board.boxThree],
-      [this.board.boxOne, this.board.boxFive, this.board.boxNine],
-      [this.board.boxOne, this.board.boxFour, this.board.boxSeven],
-      [this.board.boxTwo, this.board.boxFive, this.board.boxEight],
-      [this.board.boxThree, this.board.boxSix, this.board.boxNine],
-      [this.board.boxThree, this.board.boxFive, this.board.boxSeven],
-      [this.board.boxFour, this.board.boxFive, this.board.boxSix],
-      [this.board.boxSeven, this.board.boxEight, this.board.boxNine]
+      [this.board.sqOne, this.board.sqTwo, this.board.sqThree],
+      [this.board.sqOne, this.board.sqFive, this.board.sqNine],
+      [this.board.sqOne, this.board.sqFour, this.board.sqSeven],
+      [this.board.sqTwo, this.board.sqFive, this.board.sqEight],
+      [this.board.sqThree, this.board.sqSix, this.board.sqNine],
+      [this.board.sqThree, this.board.sqFive, this.board.sqSeven],
+      [this.board.sqFour, this.board.sqFive, this.board.sqSix],
+      [this.board.sqSeven, this.board.sqEight, this.board.sqNine]
     ]
     for (var i = 0; i < winningCombos.length; i++) {
       if(winningCombos[i] === [this.player.token, this.player.token, this.player.token]) {
-        
+        player.wins.push(this.board);
+        // this.resetGame(); on timer?
       }
     }
-    //if (check conditions) { player1.wins.push(this.board)}
-    //else if(check conditions) {player2.wins.push(this.board)}
-    //if win, reset board
   }
   checkForDraw(){
+    //for loop-- if each box is full or not empty
+
     //if (check conditions) {claim draw, reset board}
    //if this.board is full with no winning combos, claim draw
   }
@@ -49,15 +47,15 @@ class Game {
   }
   resetGame(){
     this.board = [
-      {boxOne: ""},
-      {boxTwo: ""},
-      {boxThree: ""},
-      {boxFour: ""},
-      {boxFive: ""},
-      {boxSix: ""},
-      {boxSeven: ""},
-      {boxEight: ""},
-      {boxNine: ""},
+      {sqOne: ""},
+      {sqTwo: ""},
+      {sqThree: ""},
+      {sqFour: ""},
+      {sqFive: ""},
+      {sqSix: ""},
+      {sqSeven: ""},
+      {sqEight: ""},
+      {sqNine: ""},
     ]
   }
 }
