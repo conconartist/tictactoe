@@ -1,8 +1,9 @@
 class Player {
-  constructor(id, token, wins) {
-    this.id = id;
-    this.token = token;
+  constructor(token) {
+    this.id = Date.now();
+    this.token = token;//or imgsrc?
     this.wins = [];
+    this.turn = false;
   }
   saveWinsToStorage() {
     
