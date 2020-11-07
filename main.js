@@ -2,15 +2,15 @@
 var gameText = document.querySelector(".game-text");
 var playerOneText = document.querySelector(".player-one");
 var playerTwoText = document.querySelector(".player-two");
-var boxOne = document.querySelector(".one");
-var boxTwo = document.querySelector(".two");
-var boxThree = document.querySelector(".three");
-var boxFour = document.querySelector(".four");
-var boxFive = document.querySelector(".five");
-var boxSix = document.querySelector(".six");
-var boxSeven = document.querySelector(".seven");
-var boxEight = document.querySelector(".eight");
-var boxNine = document.querySelector(".nine");
+var boxOne = document.querySelector("#one");
+var boxTwo = document.querySelector("#two");
+var boxThree = document.querySelector("#three");
+var boxFour = document.querySelector("#four");
+var boxFive = document.querySelector("#five");
+var boxSix = document.querySelector("#six");
+var boxSeven = document.querySelector("#seven");
+var boxEight = document.querySelector("#eight");
+var boxNine = document.querySelector("#nine");
 var gameBoard = document.querySelector(".game-board-area")
 
 //event listeners:
@@ -34,10 +34,10 @@ function checkTurn(){
 
 function displayGameText() {
   if (currentGame.playerOne.turn === true) {
-  gameText.innerHTML = `It's ${currentGame.playerOne.token}'s turn!`
+  gameText.innerHTML = `It's ${currentGame.playerOne.name}'s turn!`
   //add innerText/innerHTML
   } else {
-  gameText.innerHTML = `It's ${currentGame.playerTwo.token}'s turn!`
+  gameText.innerHTML = `It's ${currentGame.playerTwo.name}'s turn!`
   //add innerText/innerHTML
   }
 }
@@ -50,19 +50,20 @@ function playToken(event) {
   if (currentGame.playerOne.turn === true) {
     //enable Jim
     for (var i = 0; i < currentGame.board.length; i++) {
-      currentGame.board[i].value = "Jim"
+      //event.target.id
+      currentGame.board[i] = "Jim"
       //innerHTML for game piece
-      currentGame.checkForWin(playerOne)
-      currentGame.checkForDraw(playerOne)
+      currentGame.checkForWin(currentGame.playerOne)
+      currentGame.checkForDraw(currentGame.playerOne)
       currentGame.playerOne.turn = false;
       checkTurn();
     }
   } else {
     //enable Dwight
     for (var i = 0; i < currentGame.board.length; i++) {
-      currentGame.board[i].value = "Dwight"
-      currentGame.checkForWin(playerTwo);
-      currentGame.checkForDraw(playerTwo);
+      currentGame.board[i] = "Dwight"
+      currentGame.checkForWin(currentGame.playerTwo);
+      currentGame.checkForDraw(currentGame.playerTwo);
       currentGame.playerTwo.turn = false;
       checkturn();
     }
