@@ -48,9 +48,7 @@ function playJimsTurn(event) {
       if(event.target.id === currentGame.board[i]) {
       currentGame.board[i] = currentGame.playerOne.name;
       event.target.innerHTML = `<img class="token" src=${currentGame.playerOne.token}>`;
-      determineWin(currentGame.playerOne)
-      determineDraw()
-      updateTurn()
+      determineNext(currentGame.playerOne)
     }
   }
 }
@@ -60,32 +58,38 @@ function playDwightsTurn(event) {
       if(event.target.id === currentGame.board[i]) {
       currentGame.board[i] = currentGame.playerTwo.name;
       event.target.innerHTML = `<img class="token" src=${currentGame.playerTwo.token}>`;
-      determineWin(currentGame.playerTwo)
-      determineDraw(currentGame.playerTwo)
-      updateTurn()
+      determineNext(currentGame.playerTwo)
     }
   }
 }
 
-function determineWin(player) {
+function determineNext(player){
   if(currentGame.checkForWin(player) === true) {
+    determineWin(player)
+  } else if(currentGame.checkForDraw() === true) {
+    determineDraw()
+  } else {
+    updateTurn()
+  }
+}
+
+function determineWin(player) {
     updateWins()
     gameBoard.removeEventListener("click", playToken);
     displayWinText(player)
     //celebrateWin
     //reset game
-  }
 }
 
 function displayWinText(player) {
-  console.log("win")
-  gameText.innerText = `${player.name} WINS!`
+  gameText.classList.add("end")
+  gameText.innerHTML = `${player.name} WINS!`
 }
 
 function determineDraw() {
-  if(currentGame.checkForDraw() === true) {
-  console.log("draw draw")
-  }
+  gametext.classList.add("end")
+  gameText.innerHTML = `It is a draw.`
+  //display "It is your birthday" gif
 }
 
 function updateTurn() {
