@@ -25,39 +25,79 @@ class Game {
     }
   };
   checkForWin(player){
-    var winningCombos = [
+    if(this.board[0] === player.name && this.board[1] === player.name && this.board[2] === player.name) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } else if(this.board[0] === player.name && this.board[4] === player.name && this.board[8] === player.name) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } else if(this.board[0] === player.name && this.board[3] === player.name && this.board[6]) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } else if(this.board[1] === player.name && this.board[4] === player.name && this.board[7]) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } else if(this.board[2] === player.name && this.board[5] === player.name && this.board[8]) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } else if(this.board[2] === player.name && this.board[4] === player.name && this.board[6]) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } else if(this.board[3] === player.name && this.board[4] === player.name && this.board[5]) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } else if(this.board[6] === player.name && this.board[7] === player.name && this.board[8]) {
+      console.log("yes")
+      player.wins.push(this.board);
+    } 
 
-    [this.board[0], this.board[1], this.board[2]],
-     [this.board[0], this.board[4], this.board[8]],
-     [this.board[0], this.board[3], this.board[6]],
-     [this.board[1], this.board[4], this.board[7]],
-     [this.board[2], this.board[5], this.board[8]],
-     [this.board[2], this.board[4], this.board[6]],
-     [this.board[3], this.board[4], this.board[5]],
-     [this.board[6], this.board[7], this.board[8]]
+    // return true;
 
-    ]
+
+    // var winningCombos =
+    //
     // [
-    //   [this.board.one, this.board.two, this.board.three],
-    //   [this.board.one, this.board.five, this.board.nine],
-    //   [this.board.one, this.board.four, this.board.seven],
-    //   [this.board.two, this.board.five, this.board.eight],
-    //   [this.board.three, this.board.six, this.board.nine],
-    //   [this.board.three, this.board.five, this.board.seven],
-    //   [this.board.four, this.board.five, this.board.six],
-    //   [this.board.seven, this.board.eight, this.board.nine]
+    //
+    // [this.board[0], this.board[1], this.board[2]],
+    //  [this.board[0], this.board[4], this.board[8]],
+    //  [this.board[0], this.board[3], this.board[6]],
+    //  [this.board[1], this.board[4], this.board[7]],
+    //  [this.board[2], this.board[5], this.board[8]],
+    //  [this.board[2], this.board[4], this.board[6]],
+    //  [this.board[3], this.board[4], this.board[5]],
+    //  [this.board[6], this.board[7], this.board[8]]
+    //
     // ]
-    for (var i = 0; i < winningCombos.length; i++) {
-      if(winningCombos[i] === [player.name, player.name, player.name]) {
-        player.wins.push(this.board);
-        this.celebrateWin(player.name);
-        //return winning player name?
-        // this.resetGame(); on timer?
-      }
-    }
+
+    //
+    //
+    // // [
+    // //   [this.board.one, this.board.two, this.board.three],
+    // //   [this.board.one, this.board.five, this.board.nine],
+    // //   [this.board.one, this.board.four, this.board.seven],
+    // //   [this.board.two, this.board.five, this.board.eight],
+    // //   [this.board.three, this.board.six, this.board.nine],
+    // //   [this.board.three, this.board.five, this.board.seven],
+    // //   [this.board.four, this.board.five, this.board.six],
+    // //   [this.board.seven, this.board.eight, this.board.nine]
+    // // ]
+
+    // for (var i = 0; i < winningCombos.length; i++) {
+    //   console.log(winningCombos[i])
+    //   if([player.name, player.name, player.name] === winningCombos[i]) {
+    //     console.log('yes')
+    //     player.wins.push(this.board);
+    //     this.celebrateWin(player.name);
+    //     return true;
+    //     //return winning player name?
+    //     // this.resetGame(); on timer?
+    //   }
+    // }
+    // console.log("no")
   }
   checkForDraw(){
     //for loop-- if each box is full or not empty
+    //for board.length, if each [i] === "jim" or "dwight", claim draw
 
     //if (check conditions) {claim draw, reset board}
    //if this.board is full with no winning combos, claim draw
