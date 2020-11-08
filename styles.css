@@ -22,7 +22,7 @@ p {
   border: solid;
   width: 100%;
   height: 100%;
-  font-size: 2em;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,9 +33,9 @@ p {
   height: 20%;
 }
 
-.dwight-token {
-  width: 3em;
-  height: 2em;
+.token {
+  width: 4em;
+  height: 5em;
 }
 
 .game-board-column {
@@ -51,6 +51,7 @@ p {
   /* background-image: url(https://images.unsplash.com/photo-1586074299757-dc655f18518c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); */
   display: flex;
   width: 100%;
+  height: 24em;
   flex-direction: column;
   align-items: center;
 }
@@ -60,11 +61,6 @@ p {
   height: 22%;
 }
 
-.jim-token {
-  width: 3em;
-  height: 2.1em;
-}
-
 .logo {
   width: 20em;
   height: 25%;
@@ -72,8 +68,10 @@ p {
 
 .rows {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .player-one-column {
