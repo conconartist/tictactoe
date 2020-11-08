@@ -50,6 +50,8 @@ class Game {
     for (var i = 0; i < winningCombos.length; i++) {
       if(winningCombos[i] === [player.name, player.name, player.name]) {
         player.wins.push(this.board);
+        this.celebrateWin(player.name);
+        //return winning player name?
         // this.resetGame(); on timer?
       }
     }
@@ -60,10 +62,10 @@ class Game {
     //if (check conditions) {claim draw, reset board}
    //if this.board is full with no winning combos, claim draw
   }
-  celebrateWin() {
+  celebrateWin(player) {
     //array of gifs to display upon winning
   }
-  saveWinsToStorage(){
+  saveWinsToStorage(player){
     //add to correct player's wins array
   }
   resetGame(){

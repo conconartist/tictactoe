@@ -24,7 +24,6 @@ var currentGame;
 function startGame() {
   currentGame = new Game();
   currentGame.playerOne.turn = true;
-  currentGame.playerTwo.turn = false;
   displayGameText()
 }
 
@@ -53,6 +52,7 @@ function playJimsTurn(event) {
       currentGame.checkForWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerOne)
       currentGame.togglePlayerTurn();
+      displayGameText();
     }
   }
 }
@@ -66,6 +66,7 @@ function playDwightsTurn(event) {
       currentGame.checkForWin(currentGame.playerTwo)
       currentGame.checkForDraw(currentGame.playerTwo)
       currentGame.togglePlayerTurn();
+      displayGameText();
     }
   }
 }
