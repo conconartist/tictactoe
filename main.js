@@ -31,10 +31,8 @@ function startGame() {
 function displayGameText() {
   if (currentGame.playerOne.turn === true) {
   gameText.innerHTML = `It's ${currentGame.playerOne.name}'s turn!`
-  //add innerText/innerHTML
   } else {
   gameText.innerHTML = `It's ${currentGame.playerTwo.name}'s turn!`
-  //add innerText/innerHTML
   }
 }
 
@@ -51,7 +49,7 @@ function playJimsTurn(event) {
       if(event.target.id === currentGame.board[i]) {
     // if(event.target.id === `${Object.keys(currentGame.board[i])}`) {
       currentGame.board[i] = currentGame.playerOne.name;
-      event.target.innerHTML = `<img class="jim-token" src=${currentGame.playerOne.token}>`;
+      event.target.innerHTML = `<img class="token" src=${currentGame.playerOne.token}>`;
       currentGame.checkForWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerOne)
       currentGame.togglePlayerTurn();
@@ -64,7 +62,7 @@ function playDwightsTurn(event) {
       if(event.target.id === currentGame.board[i]) {
     // if(event.target.id === `${Object.keys(currentGame.board[i])}`) {
       currentGame.board[i] = currentGame.playerTwo.name;
-      event.target.innerHTML = `<img class="dwight-token" src=${currentGame.playerTwo.token}>`;
+      event.target.innerHTML = `<img class="token" src=${currentGame.playerTwo.token}>`;
       currentGame.checkForWin(currentGame.playerTwo)
       currentGame.checkForDraw(currentGame.playerTwo)
       currentGame.togglePlayerTurn();
