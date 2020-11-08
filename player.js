@@ -2,7 +2,7 @@ class Player {
   constructor(name, imgSrc) {
     this.id = Date.now();
     this.name = name;
-    this.token = imgSrc;//or imgsrc?
+    this.token = imgSrc;
     this.wins = [];
     this.turn = false;
   }
@@ -10,6 +10,6 @@ class Player {
     //save array of this.wins to local storage
   }
   retrieveWinsFromStorage() {
-
+    //
   }
 }

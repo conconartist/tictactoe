@@ -31,38 +31,13 @@ class Game {
     } else if(this.board[6] === player.name && this.board[7] === player.name && this.board[8] === player.name) {
       return true;
     }
-
-    // return true;
-
-
-    // var winningCombos =
-    //
-    // [
-    //
-    // [this.board[0], this.board[1], this.board[2]],
-    //  [this.board[0], this.board[4], this.board[8]],
-    //  [this.board[0], this.board[3], this.board[6]],
-    //  [this.board[1], this.board[4], this.board[7]],
-    //  [this.board[2], this.board[5], this.board[8]],
-    //  [this.board[2], this.board[4], this.board[6]],
-    //  [this.board[3], this.board[4], this.board[5]],
-    //  [this.board[6], this.board[7], this.board[8]]
-    //
-    // ]
-
-    // for (var i = 0; i < winningCombos.length; i++) {
-    //   console.log(winningCombos[i])
-    //   if([player.name, player.name, player.name] === winningCombos[i]) {
-    //     console.log('yes')
-    //     player.wins.push(this.board);
-    //     this.celebrateWin(player.name);
-    //     return true;
-    //     //return winning player name?
-    //     // this.resetGame(); on timer?
-    //   }
-    // }
   }
   checkForDraw(){
+    for (var i = 0; i < this.board.length; i++) {
+      if(this.board[i] !== "one" && this.board[i] !== "two" && this.board[i] !== "three" && this.board[i] !== "four" && this.board[i] !== "five" && this.board[i] !== "six" && this.board[i] !== "seven" && this.board[i] !== "eight" && this.board[i] !== "nine") {
+        return true
+      }
+    }
     //for loop-- if each box is full or not empty
     //for board.length, if each [i] === "jim" or "dwight", claim draw
 
