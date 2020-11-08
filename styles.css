@@ -11,65 +11,97 @@ body, html{
 
 h1{
   font-size: 2em;
-}
-
-h3{
-
+  padding: 5%;
 }
 
 p {
-  background-color: pink;
-  border: solid;
+  border: solid #808080;
+  border-width: 0.1em;
   width: 100%;
   height: 100%;
-  font-size: 2em;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.gameboard-column {
+
+.dwight {
+  width: 13em;
+  height: 22%;
+}
+
+.end {
+  color: black;
+  text-shadow: -0.05em 0 white, 0 0.05em white, 0.05em 0 white, 0 -0.05em white;
+}
+
+.game-board-column {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5%;
+  margin: 4%;
   width: 35%;
 }
 
-.gameboard-area {
+.game-board-area {
+  background-image: url(https://st2.depositphotos.com/4681751/6993/v/450/depositphotos_69937611-stock-illustration-yellow-lined-paper.jpg);
+  border: solid white;
   display: flex;
+  margin: 3%;
   width: 100%;
+  height: 24em;
   flex-direction: column;
   align-items: center;
+}
+
+.jim {
+  width: 13em;
+  height: 22%;
+}
+
+.logo {
+  width: 20em;
+  height: 25%;
+  border-radius: 1em;
 }
 
 .rows {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
-.player-one-column {
-  margin: 5%;
+.player-column {
+  margin: 2%;
+  width: 20%;
+  border: solid white;
+  border-radius: 1em;
+  border-width: 0.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .player-text {
   display: flex;
 }
+
 .player-one-wins {
   display: flex;
 }
+
 .player-wins-counter {
   display: flex;
 }
-.player-two-column {
-  margin: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .player-two-wins {
   display: flex;
 
+}
+
+.token {
+  width: 4em;
+  height: 5em;
 }
