@@ -34,15 +34,11 @@ class Game {
   }
   checkForDraw(){
     for (var i = 0; i < this.board.length; i++) {
-      if(this.board[i] !== "one" && this.board[i] !== "two" && this.board[i] !== "three" && this.board[i] !== "four" && this.board[i] !== "five" && this.board[i] !== "six" && this.board[i] !== "seven" && this.board[i] !== "eight" && this.board[i] !== "nine") {
-        return true
+      if(this.board[i] !== this.playerOne.name && this.board[i] !== this.playerTwo.name) {
+        return this.board[i]
       }
     }
-    //for loop-- if each box is full or not empty
-    //for board.length, if each [i] === "jim" or "dwight", claim draw
-
-    //if (check conditions) {claim draw, reset board}
-   //if this.board is full with no winning combos, claim draw
+    return true;
   }
   celebrateWin(player) {
     //array of gifs to display upon winning
