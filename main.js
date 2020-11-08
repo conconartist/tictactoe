@@ -52,8 +52,7 @@ function playJimsTurn(event) {
       currentGame.checkForWin(currentGame.playerOne)
       // determineWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerOne)
-      currentGame.togglePlayerTurn();
-      displayGameText();
+      updateTurn()
     }
   }
 }
@@ -66,8 +65,7 @@ function playDwightsTurn(event) {
       currentGame.checkForWin(currentGame.playerTwo)
       // determineWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerTwo)
-      currentGame.togglePlayerTurn();
-      displayGameText();
+      updateTurn()
     }
   }
 }
@@ -80,6 +78,11 @@ function playDwightsTurn(event) {
 //     //reset game
 //   }
 // }
+
+function updateTurn() {
+  currentGame.togglePlayerTurn();
+  displayGameText();
+}
 
 function updateWins() {
   //update text under Player's wins count
