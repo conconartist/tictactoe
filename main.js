@@ -38,6 +38,7 @@ function displayGameText() {
 function playToken(event) {
   if (currentGame.playerOne.turn === true) {
     playJimsTurn(event)
+
   } else {
     playDwightsTurn(event)
   }
@@ -50,6 +51,7 @@ function playJimsTurn(event) {
       currentGame.board[i] = currentGame.playerOne.name;
       event.target.innerHTML = `<img class="token" src=${currentGame.playerOne.token}>`;
       currentGame.checkForWin(currentGame.playerOne)
+      determineWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerOne)
       currentGame.togglePlayerTurn();
       displayGameText();
@@ -64,6 +66,7 @@ function playDwightsTurn(event) {
       currentGame.board[i] = currentGame.playerTwo.name;
       event.target.innerHTML = `<img class="token" src=${currentGame.playerTwo.token}>`;
       currentGame.checkForWin(currentGame.playerTwo)
+      determineWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerTwo)
       currentGame.togglePlayerTurn();
       displayGameText();
@@ -71,6 +74,14 @@ function playDwightsTurn(event) {
   }
 }
 
+function determineWin(player) {
+  if(currentGame.checkForWin() === true) {
+    updateWins()
+    //disable gameBoard/
+    //celebrateWin
+    //reset game
+  }
+}
 function updateWins() {
   //update text under Player's wins count
   //save number to storage, update player instance
