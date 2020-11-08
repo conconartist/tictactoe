@@ -3,17 +3,6 @@ class Game {
     this.playerOne = new Player("Jim", "./assets/IMG_8984.PNG");
     this.playerTwo = new Player("Dwight", "./assets/IMG_8985.PNG");
     this.board = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-    // [
-    //   {one: ""},
-    //   {two: ""},
-    //   {three: ""},
-    //   {four: ""},
-    //   {five: ""},
-    //   {six: ""},
-    //   {seven: ""},
-    //   {eight: ""},
-    //   {nine: ""},
-    // ];
   };
   togglePlayerTurn(){
     if (this.playerOne.turn === true) {
@@ -26,30 +15,22 @@ class Game {
   };
   checkForWin(player){
     if(this.board[0] === player.name && this.board[1] === player.name && this.board[2] === player.name) {
-      console.log("yes")
-      player.wins.push(this.board);
+      return true;
     } else if(this.board[0] === player.name && this.board[4] === player.name && this.board[8] === player.name) {
-      console.log("yes")
-      player.wins.push(this.board);
-    } else if(this.board[0] === player.name && this.board[3] === player.name && this.board[6]) {
-      console.log("yes")
-      player.wins.push(this.board);
-    } else if(this.board[1] === player.name && this.board[4] === player.name && this.board[7]) {
-      console.log("yes")
-      player.wins.push(this.board);
-    } else if(this.board[2] === player.name && this.board[5] === player.name && this.board[8]) {
-      console.log("yes")
-      player.wins.push(this.board);
-    } else if(this.board[2] === player.name && this.board[4] === player.name && this.board[6]) {
-      console.log("yes")
-      player.wins.push(this.board);
-    } else if(this.board[3] === player.name && this.board[4] === player.name && this.board[5]) {
-      console.log("yes")
-      player.wins.push(this.board);
-    } else if(this.board[6] === player.name && this.board[7] === player.name && this.board[8]) {
-      console.log("yes")
-      player.wins.push(this.board);
-    } 
+      return true;
+    } else if(this.board[0] === player.name && this.board[3] === player.name && this.board[6] === player.name){
+      return true;
+    } else if(this.board[1] === player.name && this.board[4] === player.name && this.board[7] === player.name) {
+      return true;
+    } else if(this.board[2] === player.name && this.board[5] === player.name && this.board[8] === player.name) {
+      return true;
+    } else if(this.board[2] === player.name && this.board[4] === player.name && this.board[6] === player.name) {
+      return true;
+    } else if(this.board[3] === player.name && this.board[4] === player.name && this.board[5] === player.name) {
+      return true;
+    } else if(this.board[6] === player.name && this.board[7] === player.name && this.board[8] === player.name) {
+      return true;
+    }
 
     // return true;
 
@@ -93,7 +74,6 @@ class Game {
     //     // this.resetGame(); on timer?
     //   }
     // }
-    // console.log("no")
   }
   checkForDraw(){
     //for loop-- if each box is full or not empty
