@@ -50,7 +50,7 @@ function playJimsTurn(event) {
       currentGame.board[i] = currentGame.playerOne.name;
       event.target.innerHTML = `<img class="token" src=${currentGame.playerOne.token}>`;
       currentGame.checkForWin(currentGame.playerOne)
-      determineWin()
+      determineWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerOne)
       updateTurn()
     }
@@ -63,20 +63,24 @@ function playDwightsTurn(event) {
       currentGame.board[i] = currentGame.playerTwo.name;
       event.target.innerHTML = `<img class="token" src=${currentGame.playerTwo.token}>`;
       currentGame.checkForWin(currentGame.playerTwo)
-      determineWin()
+      determineWin(currentGame.playerTwo)
       currentGame.checkForDraw(currentGame.playerTwo)
       updateTurn()
     }
   }
 }
 
-function determineWin() {
-  if(currentGame.checkForWin() === true) {
+function determineWin(player) {
+  if(currentGame.checkForWin(player) === true) {
     updateWins()
     gameBoard.removeEventListener("click", playToken);
     //celebrateWin
     //reset game
   }
+}
+
+function displayWinText(player) {
+  
 }
 
 function updateTurn() {
