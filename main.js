@@ -39,28 +39,18 @@ function displayGameText() {
 
 function playToken(event) {
   if (currentGame.playerOne.turn === true) {
-    playJimsTurn(event)
+    playTurn(currentGame.playerOne, event)
   } else {
-    playDwightsTurn(event)
+    playTurn(currentGame.playerTwo, event)
   }
 }
 
-function playJimsTurn(event) {
+function playTurn(player, event) {
   for (var i = 0; i < currentGame.board.length; i++) {
-      if(event.target.id === currentGame.board[i]) {
-      currentGame.board[i] = currentGame.playerOne.name;
-      event.target.innerHTML = `<img class="token" src=${currentGame.playerOne.token}>`;
-      determineNext(currentGame.playerOne)
-    }
-  }
-}
-
-function playDwightsTurn(event) {
-  for (var i = 0; i < currentGame.board.length; i++) {
-      if(event.target.id === currentGame.board[i]) {
-      currentGame.board[i] = currentGame.playerTwo.name;
-      event.target.innerHTML = `<img class="token" src=${currentGame.playerTwo.token}>`;
-      determineNext(currentGame.playerTwo)
+    if(event.target.id === currentGame.board[i]) {
+      currentGame.board[i] = player.name;
+      event.target.innerHTML = `<img class="token" src=${player.token}>`;
+      determineNext(player)
     }
   }
 }
@@ -80,8 +70,8 @@ function determineWin(player) {
     gameBoard.removeEventListener("click", playToken);
     displayWinText(player)
     //celebrateWin
-    startNewGame();
     displayWinCount(player)
+    startNewGame();
 }
 
 function displayWinText(player) {
