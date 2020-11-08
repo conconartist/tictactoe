@@ -80,7 +80,7 @@ function determineWin(player) {
     gameBoard.removeEventListener("click", playToken);
     displayWinText(player)
     //celebrateWin
-    //reset game
+    startNewGame();
     displayWinCount(player)
 }
 
@@ -100,6 +100,7 @@ function displayWinCount(player) {
 function determineDraw() {
   gameText.classList.add("end")
   gameText.innerHTML = `It is a draw.`
+  startNewGame();
   //display "It is your birthday" gif
 }
 
@@ -109,6 +110,10 @@ function updateTurn() {
 }
 
 function startNewGame() {
+  window.setTimeout(clearBoard, 2*1000)
+}
+
+function clearBoard() {
   currentGame.resetGame();
   one.innerHTML = ""
   two.innerHTML = ""

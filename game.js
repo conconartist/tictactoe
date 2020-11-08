@@ -45,7 +45,6 @@ class Game {
   }
   saveWinsToStorage(player){
     player.wins.push(this.board)
-    //add to correct player's wins array
   }
   resetGame(){
     this.board = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
