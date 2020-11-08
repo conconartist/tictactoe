@@ -24,11 +24,7 @@ var currentGame;
 function startGame() {
   currentGame = new Game();
   currentGame.playerOne.turn = true;
-  checkTurn()
-}
-
-function checkTurn(){
-  currentGame.checkTurn()
+  currentGame.playerTwo.turn = false;
   displayGameText()
 }
 
@@ -52,26 +48,26 @@ function playToken(event) {
 
 function playJimsTurn(event) {
   for (var i = 0; i < currentGame.board.length; i++) {
-    if(event.target.id === `${Object.keys(currentGame.board[i])}`) {
-      // currentGame.board[i] = currentGame.playerOne.name;
+      if(event.target.id === currentGame.board[i]) {
+    // if(event.target.id === `${Object.keys(currentGame.board[i])}`) {
+      currentGame.board[i] = currentGame.playerOne.name;
       event.target.innerHTML = `<img class="jim-token" src=${currentGame.playerOne.token}>`;
       currentGame.checkForWin(currentGame.playerOne)
       currentGame.checkForDraw(currentGame.playerOne)
-      currentGame.playerOne.turn = false;
-      checkTurn();
+      currentGame.togglePlayerTurn();
     }
   }
 }
 
 function playDwightsTurn(event) {
   for (var i = 0; i < currentGame.board.length; i++) {
-    if(event.target.id === `${Object.keys(currentGame.board[i])}`) {
-      // currentGame.board[i] = currentGame.playerTwo.name;
+      if(event.target.id === currentGame.board[i]) {
+    // if(event.target.id === `${Object.keys(currentGame.board[i])}`) {
+      currentGame.board[i] = currentGame.playerTwo.name;
       event.target.innerHTML = `<img class="dwight-token" src=${currentGame.playerTwo.token}>`;
       currentGame.checkForWin(currentGame.playerTwo)
       currentGame.checkForDraw(currentGame.playerTwo)
-      currentGame.playerTwo.turn = false;
-      checkTurn();
+      currentGame.togglePlayerTurn();
     }
   }
 }
