@@ -87,7 +87,7 @@ function displayWinText(player) {
 }
 
 function determineDraw() {
-  gametext.classList.add("end")
+  gameText.classList.add("end")
   gameText.innerHTML = `It is a draw.`
   //display "It is your birthday" gif
 }
@@ -95,6 +95,23 @@ function determineDraw() {
 function updateTurn() {
   currentGame.togglePlayerTurn();
   displayGameText();
+}
+
+function startNewGame() {
+  currentGame.resetGame();
+  one.innerHTML = ""
+  two.innerHTML = ""
+  three.innerHTML = ""
+  four.innerHTML = ""
+  five.innerHTML = ""
+  six.innerHTML = ""
+  seven.innerHTML = ""
+  eight.innerHTML = ""
+  nine.innerHTML = ""
+  startGame();
+  gameBoard.addEventListener("click", playToken);
+//refactor into a for loop?
+//pull from local storage to keep wins display on refresh
 }
 
 function updateWins() {
