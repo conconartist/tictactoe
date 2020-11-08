@@ -50,19 +50,6 @@ class Game {
     //
     // ]
 
-    //
-    //
-    // // [
-    // //   [this.board.one, this.board.two, this.board.three],
-    // //   [this.board.one, this.board.five, this.board.nine],
-    // //   [this.board.one, this.board.four, this.board.seven],
-    // //   [this.board.two, this.board.five, this.board.eight],
-    // //   [this.board.three, this.board.six, this.board.nine],
-    // //   [this.board.three, this.board.five, this.board.seven],
-    // //   [this.board.four, this.board.five, this.board.six],
-    // //   [this.board.seven, this.board.eight, this.board.nine]
-    // // ]
-
     // for (var i = 0; i < winningCombos.length; i++) {
     //   console.log(winningCombos[i])
     //   if([player.name, player.name, player.name] === winningCombos[i]) {
@@ -89,18 +76,6 @@ class Game {
     //add to correct player's wins array
   }
   resetGame(){
-    this.board = ["", "", "", "", "", "", "", "", ""]
-
-    // [
-    //   {one: ""},
-    //   {two: ""},
-    //   {three: ""},
-    //   {four: ""},
-    //   {five: ""},
-    //   {six: ""},
-    //   {seven: ""},
-    //   {eight: ""},
-    //   {nine: ""},
-    // ]
+    this.board = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
   }
 }
