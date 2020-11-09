@@ -72,7 +72,6 @@ function determineWin(player) {
     displayWinText(player)
     //celebrateWin
     displayWinCount()
-    updateWins(player)
     startNewGame();
 }
 
