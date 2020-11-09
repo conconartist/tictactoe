@@ -27,6 +27,7 @@ function startGame() {
   currentGame = new Game();
   currentGame.playerOne.turn = true;
   displayGameText()
+  displayWinCount()
 }
 
 function displayGameText() {
@@ -70,7 +71,8 @@ function determineWin(player) {
     gameBoard.removeEventListener("click", playToken);
     displayWinText(player)
     //celebrateWin
-    displayWinCount(player)
+    displayWinCount()
+    updateWins(player)
     startNewGame();
 }
 
@@ -79,11 +81,14 @@ function displayWinText(player) {
   gameText.innerHTML = `${player.name} WINS!`
 }
 
-function displayWinCount(player) {
-  if(player === currentGame.playerOne) {
-  playerOneWinCount.innerText = `${player.wins.length}`
-  } else {
-  playerTwoWincount.innerText = `${player.wins.length}`
+function displayWinCount() {
+  currentGame.playerOne.retrieveWinsFromStorage();
+  if(currentGame.playerOne.wins !== null) {
+    playerOneWinCount.innerText = `${currentGame.playerOne.wins.length}`
+  }
+  currentGame.playerTwo.retrieveWinsFromStorage();
+  if(currentGame.playerTwo.wins !== null) {
+  playerTwoWincount.innerText = `${currentGame.playerTwo.wins.length}`
   }
 }
 
@@ -122,6 +127,5 @@ function clearBoard() {
 
 function updateWins(player) {
   currentGame.saveWinsToStorage(player)
-  //update text under Player's wins count
-  //save number to storage, update player instance
+  player.saveWinsToStorage()
 }
