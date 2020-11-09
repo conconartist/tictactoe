@@ -3,7 +3,7 @@ var gameText = document.querySelector(".game-text");
 var playerOneText = document.querySelector(".player-one");
 var playerTwoText = document.querySelector(".player-two");
 var playerOneWinCount = document.querySelector(".player-one-wins-counter");
-var playerTwoWincount = document.querySelector(".player-two-wins-counter")
+var playerTwoWincount = document.querySelector(".player-two-wins-counter");
 var one = document.querySelector("#one");
 var two = document.querySelector("#two");
 var three = document.querySelector("#three");
@@ -13,7 +13,7 @@ var six = document.querySelector("#six");
 var seven = document.querySelector("#seven");
 var eight = document.querySelector("#eight");
 var nine = document.querySelector("#nine");
-var gameBoard = document.querySelector(".game-board-area")
+var gameBoard = document.querySelector(".game-board-area");
 
 //event listeners:
 window.addEventListener("load", startGame);
@@ -70,7 +70,6 @@ function determineWin(player) {
     updateWins(player)
     gameBoard.removeEventListener("click", playToken);
     displayWinText(player)
-    //celebrateWin
     displayWinCount()
     startNewGame();
 }
@@ -81,8 +80,11 @@ function updateWins(player) {
 }
 
 function displayWinText(player) {
-  gameText.classList.add("end")
-  gameText.innerHTML = `${player.id} WINS!<img src="https://media.giphy.com/media/lMVNl6XxTvXgs/giphy.gif">`
+  gameBoard.classList.add("hidden");
+  gameText.innerHTML = `
+  <h1 class="end"> ${player.id} WINS! </h1>
+  <img class="win-gifs" src="${currentGame.celebrateWin()}" alt="Random celebration gif of The Office TV Show">
+  `
 }
 
 function displayWinCount() {
@@ -100,7 +102,6 @@ function determineDraw() {
   gameText.classList.add("end")
   gameText.innerHTML = `It is a draw.`
   startNewGame();
-  //display "It is your birthday" gif
 }
 
 function updateTurn() {
@@ -109,12 +110,13 @@ function updateTurn() {
 }
 
 function startNewGame() {
-  window.setTimeout(clearBoard, 3*1000)
+  window.setTimeout(clearBoard, 4*1000)
 }
 
 function clearBoard() {
   currentGame.resetGame();
   clearBoardDisplay();
+  gameBoard.classList.remove("hidden");
   startGame();
   gameBoard.addEventListener("click", playToken);
 }
