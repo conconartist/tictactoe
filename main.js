@@ -2,6 +2,8 @@
 var gameText = document.querySelector(".game-text");
 var playerOneText = document.querySelector(".player-one");
 var playerTwoText = document.querySelector(".player-two");
+var playerOneWinCount = document.querySelector(".player-one-wins-counter");
+var playerTwoWincount = document.querySelector(".player-two-wins-counter")
 var one = document.querySelector("#one");
 var two = document.querySelector("#two");
 var three = document.querySelector("#three");
@@ -25,6 +27,7 @@ function startGame() {
   currentGame = new Game();
   currentGame.playerOne.turn = true;
   displayGameText()
+  displayWinCount()
 }
 
 function displayGameText() {
@@ -37,28 +40,18 @@ function displayGameText() {
 
 function playToken(event) {
   if (currentGame.playerOne.turn === true) {
-    playJimsTurn(event)
+    playTurn(currentGame.playerOne, event)
   } else {
-    playDwightsTurn(event)
+    playTurn(currentGame.playerTwo, event)
   }
 }
 
-function playJimsTurn(event) {
+function playTurn(player, event) {
   for (var i = 0; i < currentGame.board.length; i++) {
-      if(event.target.id === currentGame.board[i]) {
-      currentGame.board[i] = currentGame.playerOne.name;
-      event.target.innerHTML = `<img class="token" src=${currentGame.playerOne.token}>`;
-      determineNext(currentGame.playerOne)
-    }
-  }
-}
-
-function playDwightsTurn(event) {
-  for (var i = 0; i < currentGame.board.length; i++) {
-      if(event.target.id === currentGame.board[i]) {
-      currentGame.board[i] = currentGame.playerTwo.name;
-      event.target.innerHTML = `<img class="token" src=${currentGame.playerTwo.token}>`;
-      determineNext(currentGame.playerTwo)
+    if(event.target.id === currentGame.board[i]) {
+      currentGame.board[i] = player.name;
+      event.target.innerHTML = `<img class="token" src=${player.token}>`;
+      determineNext(player)
     }
   }
 }
@@ -74,11 +67,13 @@ function determineNext(player){
 }
 
 function determineWin(player) {
-    updateWins()
+    updateWins(player)
     gameBoard.removeEventListener("click", playToken);
     displayWinText(player)
     //celebrateWin
-    //reset game
+    displayWinCount()
+    updateWins(player)
+    startNewGame();
 }
 
 function displayWinText(player) {
@@ -86,9 +81,21 @@ function displayWinText(player) {
   gameText.innerHTML = `${player.name} WINS!`
 }
 
+function displayWinCount() {
+  currentGame.playerOne.retrieveWinsFromStorage();
+  if(currentGame.playerOne.wins !== null) {
+    playerOneWinCount.innerText = `${currentGame.playerOne.wins.length}`
+  }
+  currentGame.playerTwo.retrieveWinsFromStorage();
+  if(currentGame.playerTwo.wins !== null) {
+  playerTwoWincount.innerText = `${currentGame.playerTwo.wins.length}`
+  }
+}
+
 function determineDraw() {
-  gametext.classList.add("end")
+  gameText.classList.add("end")
   gameText.innerHTML = `It is a draw.`
+  startNewGame();
   //display "It is your birthday" gif
 }
 
@@ -97,7 +104,28 @@ function updateTurn() {
   displayGameText();
 }
 
-function updateWins() {
-  //update text under Player's wins count
-  //save number to storage, update player instance
+function startNewGame() {
+  window.setTimeout(clearBoard, 2*1000)
+}
+
+function clearBoard() {
+  currentGame.resetGame();
+  one.innerHTML = ""
+  two.innerHTML = ""
+  three.innerHTML = ""
+  four.innerHTML = ""
+  five.innerHTML = ""
+  six.innerHTML = ""
+  seven.innerHTML = ""
+  eight.innerHTML = ""
+  nine.innerHTML = ""
+  startGame();
+  gameBoard.addEventListener("click", playToken);
+//refactor into a for loop?
+//pull from local storage to keep wins display on refresh
+}
+
+function updateWins(player) {
+  currentGame.saveWinsToStorage(player)
+  player.saveWinsToStorage()
 }

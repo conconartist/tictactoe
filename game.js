@@ -44,7 +44,7 @@ class Game {
     //array of gifs to display upon winning
   }
   saveWinsToStorage(player){
-    //add to correct player's wins array
+    player.wins.push(this.board)
   }
   resetGame(){
     this.board = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
