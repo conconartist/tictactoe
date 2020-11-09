@@ -12,6 +12,8 @@ body, html{
 h1{
   font-size: 2em;
   padding: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* -----Header----- */
@@ -24,6 +26,10 @@ h1{
 .end {
   color: black;
   text-shadow: -0.05em 0 white, 0 0.05em white, 0.05em 0 white, 0 -0.05em white;
+}
+
+.win-gifs {
+  max-width: 100%;
 }
 
 /* -----Game Board----- */
@@ -95,4 +101,8 @@ p {
 .token {
   width: 4em;
   height: 5em;
+}
+
+.hidden {
+  display: none;
 }
