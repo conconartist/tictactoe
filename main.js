@@ -75,9 +75,14 @@ function determineWin(player) {
     startNewGame();
 }
 
+function updateWins(player) {
+  currentGame.saveWinsToStorage(player)
+  player.saveWinsToStorage()
+}
+
 function displayWinText(player) {
   gameText.classList.add("end")
-  gameText.innerHTML = `${player.id} WINS!`
+  gameText.innerHTML = `${player.id} WINS!<img src="https://media.giphy.com/media/lMVNl6XxTvXgs/giphy.gif">`
 }
 
 function displayWinCount() {
@@ -104,11 +109,17 @@ function updateTurn() {
 }
 
 function startNewGame() {
-  window.setTimeout(clearBoard, 2*1000)
+  window.setTimeout(clearBoard, 3*1000)
 }
 
 function clearBoard() {
   currentGame.resetGame();
+  clearBoardDisplay();
+  startGame();
+  gameBoard.addEventListener("click", playToken);
+}
+
+function clearBoardDisplay() {
   one.innerHTML = ""
   two.innerHTML = ""
   three.innerHTML = ""
@@ -118,13 +129,4 @@ function clearBoard() {
   seven.innerHTML = ""
   eight.innerHTML = ""
   nine.innerHTML = ""
-  startGame();
-  gameBoard.addEventListener("click", playToken);
-//refactor into a for loop?
-//pull from local storage to keep wins display on refresh
-}
-
-function updateWins(player) {
-  currentGame.saveWinsToStorage(player)
-  player.saveWinsToStorage()
 }
