@@ -14,27 +14,27 @@ class Game {
     }
   };
   checkForWin(player){
-    if(this.board[0] === player.name && this.board[1] === player.name && this.board[2] === player.name) {
+    if(this.board[0] === player.id && this.board[1] === player.id && this.board[2] === player.id) {
       return true;
-    } else if(this.board[0] === player.name && this.board[4] === player.name && this.board[8] === player.name) {
+    } else if(this.board[0] === player.id && this.board[4] === player.id && this.board[8] === player.id) {
       return true;
-    } else if(this.board[0] === player.name && this.board[3] === player.name && this.board[6] === player.name){
+    } else if(this.board[0] === player.id && this.board[3] === player.id && this.board[6] === player.id){
       return true;
-    } else if(this.board[1] === player.name && this.board[4] === player.name && this.board[7] === player.name) {
+    } else if(this.board[1] === player.id && this.board[4] === player.id && this.board[7] === player.id) {
       return true;
-    } else if(this.board[2] === player.name && this.board[5] === player.name && this.board[8] === player.name) {
+    } else if(this.board[2] === player.id && this.board[5] === player.id && this.board[8] === player.id) {
       return true;
-    } else if(this.board[2] === player.name && this.board[4] === player.name && this.board[6] === player.name) {
+    } else if(this.board[2] === player.id && this.board[4] === player.id && this.board[6] === player.id) {
       return true;
-    } else if(this.board[3] === player.name && this.board[4] === player.name && this.board[5] === player.name) {
+    } else if(this.board[3] === player.id && this.board[4] === player.id && this.board[5] === player.id) {
       return true;
-    } else if(this.board[6] === player.name && this.board[7] === player.name && this.board[8] === player.name) {
+    } else if(this.board[6] === player.id && this.board[7] === player.id && this.board[8] === player.id) {
       return true;
     }
   }
   checkForDraw(){
     for (var i = 0; i < this.board.length; i++) {
-      if(this.board[i] !== this.playerOne.name && this.board[i] !== this.playerTwo.name) {
+      if(this.board[i] !== this.playerOne.id && this.board[i] !== this.playerTwo.id) {
         return this.board[i]
       }
     }

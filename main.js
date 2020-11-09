@@ -32,9 +32,9 @@ function startGame() {
 
 function displayGameText() {
   if (currentGame.playerOne.turn === true) {
-  gameText.innerHTML = `It's ${currentGame.playerOne.name}'s turn!`
+  gameText.innerHTML = `It's ${currentGame.playerOne.id}'s turn!`
   } else {
-  gameText.innerHTML = `It's ${currentGame.playerTwo.name}'s turn!`
+  gameText.innerHTML = `It's ${currentGame.playerTwo.id}'s turn!`
   }
 }
 
@@ -49,7 +49,7 @@ function playToken(event) {
 function playTurn(player, event) {
   for (var i = 0; i < currentGame.board.length; i++) {
     if(event.target.id === currentGame.board[i]) {
-      currentGame.board[i] = player.name;
+      currentGame.board[i] = player.id;
       event.target.innerHTML = `<img class="token" src=${player.token}>`;
       determineNext(player)
     }
@@ -78,7 +78,7 @@ function determineWin(player) {
 
 function displayWinText(player) {
   gameText.classList.add("end")
-  gameText.innerHTML = `${player.name} WINS!`
+  gameText.innerHTML = `${player.id} WINS!`
 }
 
 function displayWinCount() {
