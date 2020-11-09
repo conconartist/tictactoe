@@ -32,4 +32,6 @@ Project spec & rubric can be found [here](https://frontend.turing.io/projects/mo
 
 * 11/7/2020- Connected elements of functionality to the DOM with query selectors and event listeners.  Challenges: I had to refactor my functions quite a bit to make connectivity work, which was tricky.  I hoped to iterate through an array of possible winning combinations but I wasn't able to log the results correctly, so I opted for a long else if statement that I'm planning to refactor later.  Wins: The checkForWin function works and is successfully connected to the DOM.  
 
-* 11/8/2020-   
+* 11/8/2020- Completed functionality of game in the DOM and main.js, aside from displaying win counts for players.  Submitted a PR for mentor review to request insight on how to solve this issue where the count is incorrect.  
+
+* 11/9/2020-   
