@@ -55,7 +55,7 @@ The purpose of this project is to build a functioning game of Tic Tac Toe from s
 
 2. Copy the code to clone the repo to your local machine.
 
-3. In your terminal, enter `git clone` <copied link>
+3. In your terminal, enter `git clone` and paste the copied link.
 
 4. CD into the directory to view the respective files (main.js, game.js, player.js, styles.css, index.html).
 
