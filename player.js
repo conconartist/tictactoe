@@ -1,7 +1,6 @@
 class Player {
-  constructor(name, imgSrc) {
-    this.id = Date.now();//can i delete?
-    this.name = name;
+  constructor(id, imgSrc) {
+    this.id = id;
     this.token = imgSrc;
     this.wins = [];
     this.turn = false;
@@ -9,11 +8,11 @@ class Player {
   saveWinsToStorage() {
     var winsToStore = this.wins;
     var stringifiedWins = JSON.stringify(winsToStore);
-    localStorage.setItem(`storedWins${this.name}`, stringifiedWins)
+    localStorage.setItem(`storedWins${this.id}`, stringifiedWins)
   }
   retrieveWinsFromStorage() {
-    var retrievedWins = localStorage.getItem(`storedWins${this.name}`);
+    var retrievedWins = localStorage.getItem(`storedWins${this.id}`);
     var parsedWins = JSON.parse(retrievedWins)
-    this.wins = parsedWins
+    this.wins = parsedWins || [];
   }
 }
